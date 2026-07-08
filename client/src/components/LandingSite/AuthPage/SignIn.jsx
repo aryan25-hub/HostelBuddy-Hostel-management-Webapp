@@ -21,7 +21,7 @@ export default function SignIn() {
     event.preventDefault();
     setLoader(true);
 
-    const response = await fetch("http://localhost:3000/api/auth/login", {
+    const response = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ export default function SignIn() {
 
     if (result.success) {
       localStorage.setItem("token", result.data.token);
-      const student = await fetch("http://localhost:3000/api/student/get-student", {
+      const student = await fetch("/api/student/get-student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

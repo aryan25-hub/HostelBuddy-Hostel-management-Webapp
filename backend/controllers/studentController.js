@@ -30,7 +30,7 @@ const registerStudent = async (req, res) => {
     password,
   } = req.body;
   try {
-    let student = await Student.findOne({ reg_id });
+    let student = await Student.findOne({ reg_id: cms_id });
 
     if (student) {
       return res
@@ -52,7 +52,7 @@ const registerStudent = async (req, res) => {
 
     student = new Student({
       name,
-      reg_id,
+      reg_id: cms_id,
       room_no,
       batch,
       dept,

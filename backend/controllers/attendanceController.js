@@ -29,7 +29,7 @@ const markAttendance = async (req, res) => {
     });
     const result = await attendance.save();
     success = true;
-    res.status(201).json(success, result);
+    res.status(201).json({ success, attendance: result });
   } catch (err) {
     res.status(500).json({ success, error: err.message });
   }

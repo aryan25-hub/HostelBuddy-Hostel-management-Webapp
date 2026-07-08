@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "client": "npm run dev --prefix client",
-    "server": "npm start --prefix backend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "npm run dev --prefix backend",
+    "dev": "concurrently --names \"SERVER,CLIENT\" --prefix-colors \"cyan,magenta\" \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "email-js": "^2.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
   }
 }
