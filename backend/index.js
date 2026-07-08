@@ -28,7 +28,7 @@ app.get("/api/seed", async (req, res) => {
     // 1. Check if seeded
     let hostel = await Hostel.findOne({ name: "Block A Boys Hostel" });
     if (!hostel) {
-      hostel = new Hostel({ name: "Block A Boys Hostel", capacity: 100, rooms: 50, vacant: 100 });
+      hostel = new Hostel({ name: "Block A Boys Hostel", location: "Main Campus", capacity: 100, rooms: 50, vacant: 100 });
       await hostel.save();
     }
 
