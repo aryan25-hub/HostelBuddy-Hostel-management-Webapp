@@ -49,11 +49,11 @@ npm run dev
 
 ## Login Details
 - AdminLogin
-    - muhammaddanish14@gmail.com
-    - Password: 123456789
+    - admin@hostelbuddy.com 
+    - Password: Admin@1234
 - Login
-    - ahad@gmail.com
-    - Password: 12345678
+    - student@hostelbuddy.com
+    - Password: Student@1234
 
 ## Add .env file in backend folder with following content
 ```
