@@ -38,7 +38,7 @@ app.get("/api/seed", async (req, res) => {
       const hashedPassword = await bcrypt.hash("Admin@1234", salt);
       adminUser = new User({ email: "admin@hostelbuddy.com", password: hashedPassword, isAdmin: true });
       await adminUser.save();
-      const adminProfile = new Admin({ user: adminUser.id, name: "Super Admin", cnic: "12345-6789012-3", contact: "0300-1234567", hostel: hostel.id });
+      const adminProfile = new Admin({ user: adminUser.id, name: "Super Admin", email: "admin@hostelbuddy.com", father_name: "Admin Father", address: "123 Admin St", dob: new Date("1990-01-01"), cnic: "12345-6789012-3", contact: "0300-1234567", hostel: hostel.id });
       await adminProfile.save();
     }
 
@@ -48,7 +48,7 @@ app.get("/api/seed", async (req, res) => {
       const hashedPassword = await bcrypt.hash("Student@1234", salt);
       studentUser = new User({ email: "student@hostelbuddy.com", password: hashedPassword, isAdmin: false });
       await studentUser.save();
-      const studentProfile = new Student({ user: studentUser.id, name: "Demo Student", reg_id: "CMS-12345", contact: "0300-9876543", hostel: hostel.id, room_no: 101, batch: "2024", dept: "CS" });
+      const studentProfile = new Student({ user: studentUser.id, name: "Demo Student", email: "student@hostelbuddy.com", father_name: "Student Father", address: "456 Student Ave", dob: new Date("2000-01-01"), cnic: "98765-4321098-7", course: "BSCS", reg_id: 12345, contact: "0300-9876543", hostel: hostel.id, room_no: 101, batch: 2024, dept: "CS" });
       await studentProfile.save();
     }
 
